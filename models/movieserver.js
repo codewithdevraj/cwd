@@ -26,7 +26,7 @@ const dbschema = new mongoose.Schema(
 
 const profileschema = new mongoose.Schema(
   {
-    Name: {
+    name: {
       type: String,
       required: true,
     },
@@ -42,26 +42,26 @@ const profileschema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    "About Me": {
+    "about-me": {
       type: String,
       required: true,
     },
-    "About Us": {
+    "about-us": {
       type: String,
       required: true,
     },
     skills: {
-      "Programming Languages": [String],
-      "Web Technologies": [String],
-      Database: [String],
-      Tools: [String],
-      "Operating System": [String],
+      "programing-languages": [String],
+      "web technologies": [String],
+      database: [String],
+      tools: [String],
+      "operating system": [String],
     },
-    Projects: [
+    projects: [
       {
-        "Project Name": String,
-        Description: String,
-        Technologies: [
+        "project-name": String,
+        "description": String,
+        technologies: [
           {
             type: Map,
             of: Number,
@@ -69,7 +69,7 @@ const profileschema = new mongoose.Schema(
         ],
       },
     ],
-    Education: [
+    education: [
       {
         Degree: String,
         Branch: String,
@@ -79,7 +79,7 @@ const profileschema = new mongoose.Schema(
         Year: String,
       },
     ],
-    Experience: [
+    experience: [
       {
         Company: String,
         Role: String,
@@ -87,23 +87,23 @@ const profileschema = new mongoose.Schema(
         Description: String,
       },
     ],
-    Contact: {
+    contact: {
       Phone: String,
       Email: String,
       Address: String,
       Linkedin: String,
       Github: String,
     },
-    Resume: String,
-    Certificates: [
+    resume: String,
+    certificates: [
       {
-        "Certificate Name": String,
-        "Issued By": String,
+        "certificate name": String,
+        "issued by": String,
         Year: String,
       },
     ],
-    Hobbies: [String],
-    Languages: [String],
+    hobbies: [String],
+    languages: [String],
   },
   {
     timestamps: true,
@@ -115,5 +115,5 @@ const profile = mongoose.model("profile", profileschema);
 
 module.exports = {
   mvdata,
-  profile,
+  profile
 };
