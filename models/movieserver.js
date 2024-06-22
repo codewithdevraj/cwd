@@ -1,29 +1,5 @@
 const mongoose = require("mongoose");
 
-const dbschema = new mongoose.Schema(
-  {
-    title: {
-      type: String,
-      required: true,
-    },
-    year: {
-      type: Number,
-      required: true,
-    },
-    genre: {
-      type: String,
-      required: true,
-    },
-    actors: {
-      type: [String],
-      required: true,
-    },
-  },
-  {
-    timestamps: true,
-  }
-);
-
 const profileschema = new mongoose.Schema(
   {
     name: {
@@ -42,25 +18,24 @@ const profileschema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    "about-me": {
+    about_me: {
       type: String,
       required: true,
     },
-    "about-us": {
+    about_us: {
       type: String,
-      required: true,
     },
     skills: {
-      "programing-languages": [String],
-      "web technologies": [String],
+      programing_languages: [String],
+      web_technologies: [String],
       database: [String],
       tools: [String],
-      "operating system": [String],
+      os: [String],
     },
     projects: [
       {
-        "project-name": String,
-        "description": String,
+        project_name: String,
+        description: String,
         technologies: [
           {
             type: Map,
@@ -71,7 +46,7 @@ const profileschema = new mongoose.Schema(
     ],
     education: [
       {
-        Degree: String,
+        degree: String,
         Branch: String,
         College: String,
         University: String,
@@ -97,8 +72,8 @@ const profileschema = new mongoose.Schema(
     resume: String,
     certificates: [
       {
-        "certificate name": String,
-        "issued by": String,
+        cert_name: String,
+        issued_by: String,
         Year: String,
       },
     ],
@@ -110,10 +85,8 @@ const profileschema = new mongoose.Schema(
   }
 );
 
-const mvdata = mongoose.model("mvdb", dbschema);
 const profile = mongoose.model("profile", profileschema);
 
 module.exports = {
-  mvdata,
   profile
 };
