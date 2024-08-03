@@ -4,5 +4,10 @@ const {
 const router = express.Router()
 
 router.route('/user')
-  .get(getallusers)
+  .get(getallusers);
+router
+  .route('/')
+  .get((req, res) => {
+    res.send("Hello from server");
+  })
 module.exports = router;
